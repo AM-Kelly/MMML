@@ -1,15 +1,15 @@
 import RPi.GPIO as GPIO
 import time
-enable_pin = 6,13,19,26
+enable_pin = 6,13,19,26 # This might be able to go? 
  
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
-coil_A_1_pin = 6 # Brown
-coil_A_2_pin = 13 # Red
-coil_B_1_pin = 19 # Orange
-coil_B_2_pin = 26 # Yellow
+#in order of firing magnets
+coil_pin_4 = 26 # Yellow
+coil_pin_2 = 13 # Red
+coil_pin_3 = 19 # Orange
+coil_pin_1 = 6 # Brown
  
-# adjust if different
 StepCount = 8
 Seq = range(0, StepCount)
 #my revision 
@@ -33,19 +33,20 @@ Seq[7] = [1,0,0,1]
 #Seq[7] = [0,1,1,0]
  
 GPIO.setup(enable_pin, GPIO.OUT)
-GPIO.setup(coil_A_1_pin, GPIO.OUT)
-GPIO.setup(coil_A_2_pin, GPIO.OUT)
-GPIO.setup(coil_B_1_pin, GPIO.OUT)
-GPIO.setup(coil_B_2_pin, GPIO.OUT)
+GPIO.setup(coil_pin_4, GPIO.OUT)
+GPIO.setup(coil_pin_2, GPIO.OUT)
+GPIO.setup(coil_pin_3, GPIO.OUT)
+GPIO.setup(coil_pin_1, GPIO.OUT)
  
 GPIO.output(enable_pin, 1)
  
 def setStep(w1, w2, w3, w4):
-	#1324
-    GPIO.output(coil_A_1_pin, w1)
-    GPIO.output(coil_A_2_pin, w2)
-    GPIO.output(coil_B_1_pin, w3)
-    GPIO.output(coil_B_2_pin, w4)
+	#4321 - firing order
+    GPIO.output(coil_pin_4, w4)
+    GPIO.output(coil_pin_2, w2)
+    GPIO.output(coil_pin_3, w3)
+    GPIO.output(coil_pin_1, w1)
+    
  
 def forward(delay, steps):
     for i in range(steps):
