@@ -14,7 +14,7 @@ from pyfingerprint.pyfingerprint import PyFingerprint
 ## Global Var for loop here
 inLoop = 0
 ## Locked/Unlocked identification var
-Unlocked = None
+Locked = True
 
 ## Search for a finger
 ##
@@ -60,13 +60,33 @@ while (inLoop == 0):
         else:
             print('Found template at position #' + str(positionNumber))
             print('The accuracy score is: ' + str(accuracyScore))
-            ##Escape for loop here and call motorstart.py
-	    Unlocked = True
-	    if Unlocked == True:
-		##Open MotorStart.py but for now test with a test unit.
+            
+            if Locked == True:
+			#Call motor function for unlocking
 			MotorStart.motor_start()
-			inLoop = 1
-			print 'Loop finish'
+			#Door will now be unlocked
+			#Set the Locked var to False - as the door is unlocked
+			Locked = False
+			
+            if Locked == False:
+			#Call motor function for locking
+			MotorStart.motor_start()
+			#Door will now be locked
+			#Set the Locked var to True - as the door is now locked
+			
+            ##Escape for loop here and call motorstart.py
+	    #Unlocked = True
+	    #if Unlocked == True:
+		###Open MotorStart.py but for now test with a test unit.
+			#MotorStart.motor_start()
+			##inLoop = 1
+			#print 'Loop finish'
+			#Unlocked = False
+			#print 'Unlocked = False'
+			
+			#if Unlocked == False:
+				#print 'Unlocked = True'
+
 
         ## OPTIONAL stuff
         ##
