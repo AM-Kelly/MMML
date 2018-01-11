@@ -39,7 +39,6 @@ def motor_start():
 	GPIO.setup(coil_pin_2, GPIO.OUT)
 	GPIO.setup(coil_pin_3, GPIO.OUT)
 	GPIO.setup(coil_pin_1, GPIO.OUT)
-	print 'pins are setup'
 	#GPIO.output(enable_pin, 1)
  
 	def setStep(w1, w2, w3, w4):
@@ -55,15 +54,12 @@ def motor_start():
 			for j in range(StepCount):
 				setStep(Seq[j][0], Seq[j][1], Seq[j][2], Seq[j][3])
 				time.sleep(delay)
-		print 'Unlocked'
  
 	def backwards(delay, steps):
 		for i in range(steps):
 			for j in reversed(range(StepCount)):
 				setStep(Seq[j][0], Seq[j][1], Seq[j][2], Seq[j][3])
 				time.sleep(delay)
-		print 'Locked'
-	print 'ive got this far'
 
 	delay = raw_input("Time Delay (ms)?")
 	steps = raw_input("How many steps forward? ")
