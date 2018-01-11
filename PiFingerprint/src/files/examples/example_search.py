@@ -74,20 +74,6 @@ while (inLoop == 0):
 			#Door will now be locked
 			#Set the Locked var to True - as the door is now locked
 			
-            ##Escape for loop here and call motorstart.py
-	    #Unlocked = True
-	    #if Unlocked == True:
-		###Open MotorStart.py but for now test with a test unit.
-			#MotorStart.motor_start()
-			##inLoop = 1
-			#print 'Loop finish'
-			#Unlocked = False
-			#print 'Unlocked = False'
-			
-			#if Unlocked == False:
-				#print 'Unlocked = True'
-
-
         ## OPTIONAL stuff
         ##
 
