@@ -25,54 +25,62 @@ def fingerprintread(inLoop,Locked):
 
 	## Tries to search the finger and calculate hash
 	## Start loop here
-	while (inLoop == 0):
-		print 'Loop start'
-		try:
-			print('Waiting for finger...')
-	
-			## Wait that finger is read
-			while ( f.readImage() == False ):
-				pass
+	##while (inLoop == 0):
+	##print 'Loop start'
+	try:
+		print('Waiting for finger...')
 
-			## Converts read image to characteristics and stores it in charbuffer 1
-			f.convertImage(0x01)
+		## Wait that finger is read
+		while ( f.readImage() == False ):
+			pass
 
-			## Searchs template
-			result = f.searchTemplate()
-	
-			positionNumber = result[0]
-			accuracyScore = result[1]
+		## Converts read image to characteristics and stores it in charbuffer 1
+		f.convertImage(0x01)
 
-			if ( positionNumber == -1 ):
-				print('No match found!')
-				##exit(0)
-			else:
-				print('Found template at position #' + str(positionNumber))
-				print('The accuracy score is: ' + str(accuracyScore))
-            
-				if Locked == True:
-					UnlockDoor(inLoop,Locked)
-					
-				else:
-					LockDoor(inLoop,Locked)
-					
-			## OPTIONAL stuff
-			##
+		## Searchs template
+		result = f.searchTemplate()
 
-			## Loads the found template to charbuffer 1
-			f.loadTemplate(positionNumber, 0x01)
+		positionNumber = result[0]
+		accuracyScore = result[1]
 
-			## Downloads the characteristics of template loaded in charbuffer 1
-			characterics = str(f.downloadCharacteristics(0x01)).encode('utf-8')
-
-			## Hashes characteristics of template
-			print('SHA-2 hash of template: ' + hashlib.sha256(characterics).hexdigest())
-
-		except Exception as e:
-			print('Operation failed!')
-			print('Exception message: ' + str(e))
-			##exit(1)
+		if ( positionNumber == -1 ):
+			print('No match found!')
+			##exit(0)
+		else:
+			print('Found template at position #' + str(positionNumber))
+			print('The accuracy score is: ' + str(accuracyScore))
+			#Test for locked door variable
+			#print('The door is: %s' % Locked)
 			
+			if (Locked == True):
+				#Unlock
+				Locked = False
+				print 'Unlocked the door'
+				fingerprintread(inLoop,Locked)
+			
+			if (Locked == False):
+				#Lock
+				Locked = True
+				print 'Locked the door'
+				fingerprintread(inLoop,Locked)
+			
+		## OPTIONAL stuff
+		##
+
+		## Loads the found template to charbuffer 1
+		f.loadTemplate(positionNumber, 0x01)
+
+		## Downloads the characteristics of template loaded in charbuffer 1
+		characterics = str(f.downloadCharacteristics(0x01)).encode('utf-8')
+
+		## Hashes characteristics of template
+		print('SHA-2 hash of template: ' + hashlib.sha256(characterics).hexdigest())
+
+	except Exception as e:
+		print('Operation failed!')
+		print('Exception message: ' + str(e))
+		##exit(1)
+		
 def UnlockDoor(inLoop,Locked):
 	#Call motor function for unlocking
 	MotorStart.motor_start()
