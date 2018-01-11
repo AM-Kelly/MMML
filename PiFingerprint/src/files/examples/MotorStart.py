@@ -50,7 +50,6 @@ def motor_start(delay,step):
 		GPIO.output(coil_pin_3, w3)
 		GPIO.output(coil_pin_1, w1)
     
-# 
 	def forward(delay, steps):
 		for i in range(steps):
 			for j in range(StepCount):
