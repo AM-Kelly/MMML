@@ -1,13 +1,13 @@
 import RPi.GPIO as GPIO
 import time
-enable_pin = 6,13,19,26 # This might be able to go? 
+#enable_pin = 6,13,19,26 # This might be able to go? 
  
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 #in order of firing magnets
 coil_pin_4 = 26 # Yellow
-coil_pin_2 = 13 # Red
 coil_pin_3 = 19 # Orange
+coil_pin_2 = 13 # Red
 coil_pin_1 = 6 # Brown
  
 StepCount = 8
@@ -32,13 +32,13 @@ Seq[7] = [1,0,0,1]
 #Seq[6] = [0,0,1,0]
 #Seq[7] = [0,1,1,0]
  
-GPIO.setup(enable_pin, GPIO.OUT)
+#GPIO.setup(enable_pin, GPIO.OUT)
 GPIO.setup(coil_pin_4, GPIO.OUT)
 GPIO.setup(coil_pin_2, GPIO.OUT)
 GPIO.setup(coil_pin_3, GPIO.OUT)
 GPIO.setup(coil_pin_1, GPIO.OUT)
  
-GPIO.output(enable_pin, 1)
+#GPIO.output(enable_pin, 1)
  
 def setStep(w1, w2, w3, w4):
 	#4321 - firing order

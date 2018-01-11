@@ -64,9 +64,9 @@ while (inLoop == 0):
 	    Unlocked = True
 	    if Unlocked == True:
 		##Open MotorStart.py but for now test with a test unit.
-		MotorStart.motor_start()
-	    inLoop = 1
-	    print 'Loop finish'
+			MotorStart.motor_start()
+			inLoop = 1
+			print 'Loop finish'
 
         ## OPTIONAL stuff
         ##
