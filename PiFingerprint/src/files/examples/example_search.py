@@ -84,12 +84,16 @@ def fingerprintread(inLoop,Locked):
 		##exit(1)
 		
 def UnlockDoor(inLoop,Locked):
+	delay = 1
+	steps = 250
 	#Call motor function for unlocking
-	MotorStart.main(delay,steps)
+	MotorStart.motor_start(delay,steps)
 	
 def LockDoor(inLoop,Locked):
+	delay = 1
+	steps = 250
 	#Call motor function for locking
-	MotorStart.main(delay,steps)
+	MotorStart.motor_start(delay,steps)
 
 
 if __name__ == '__main__':	

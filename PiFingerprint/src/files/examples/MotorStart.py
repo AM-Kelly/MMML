@@ -1,3 +1,5 @@
+delay = 1
+steps = 250
 def motor_start(delay,step):
 	import RPi.GPIO as GPIO
 	import time
@@ -69,12 +71,10 @@ def motor_start(delay,step):
 #	steps = raw_input("How many steps backwards? ")
 	backwards(int(delay) / 1000.0, int(steps))
  
-def main(delay,steps):
+#def main(delay,steps):
 	# Motor step and delay values
 	#perform motor_start
-	motor_start(delay,steps)
+	#motor_start(delay,steps)
 
-if __name__ == '__main__':
-	delay = 1
-	steps = 250
-	main(delay,steps)
+#if __name__ == '__main__':
+	#main(delay,steps)
