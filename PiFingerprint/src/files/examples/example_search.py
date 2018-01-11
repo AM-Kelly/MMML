@@ -54,12 +54,14 @@ def fingerprintread(inLoop,Locked):
 			
 			if (Locked == True):
 				#Unlock
+				UnlockDoor(inLoop,Locked)
 				Locked = False
 				print 'Unlocked the door'
 				fingerprintread(inLoop,Locked)
 			
 			if (Locked == False):
 				#Lock
+				LockDoor(inLoop,Locked)
 				Locked = True
 				print 'Locked the door'
 				fingerprintread(inLoop,Locked)
@@ -83,23 +85,12 @@ def fingerprintread(inLoop,Locked):
 		
 def UnlockDoor(inLoop,Locked):
 	#Call motor function for unlocking
-	MotorStart.motor_start()
-	#Door will now be unlocked
-	print 'Door is unlocked'
-	#Set the Locked var to False - as the door is unlocked
-	Locked = False
-	#Exit loop
-	inLoop = 1
-	#Call function again with the hope of skipping this function
-	fingerprintread(inLoop,Locked)
+	MotorStart.main(delay,steps)
 	
 def LockDoor(inLoop,Locked):
 	#Call motor function for locking
-	MotorStart.motor_start()
-	#Door will now be locked
-	print 'Door is locked'
-	#Set the Locked var to True - as the door is now locked
-	Locked = True
+	MotorStart.main(delay,steps)
+
 
 if __name__ == '__main__':	
 	import hashlib

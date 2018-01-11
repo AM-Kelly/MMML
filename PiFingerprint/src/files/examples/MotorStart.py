@@ -1,4 +1,4 @@
-def motor_start():
+def motor_start(delay,step):
 	import RPi.GPIO as GPIO
 	import time
 	print 'Motors Starting...'
@@ -48,27 +48,33 @@ def motor_start():
 		GPIO.output(coil_pin_3, w3)
 		GPIO.output(coil_pin_1, w1)
     
- 
+# 
 	def forward(delay, steps):
 		for i in range(steps):
 			for j in range(StepCount):
 				setStep(Seq[j][0], Seq[j][1], Seq[j][2], Seq[j][3])
 				time.sleep(delay)
+		print 'Unlocked'
  
 	def backwards(delay, steps):
 		for i in range(steps):
 			for j in reversed(range(StepCount)):
 				setStep(Seq[j][0], Seq[j][1], Seq[j][2], Seq[j][3])
 				time.sleep(delay)
+		print 'Locked'
 
-	delay = raw_input("Time Delay (ms)?")
-	steps = raw_input("How many steps forward? ")
+#	delay = raw_input("Time Delay (ms)?")
+#	steps = raw_input("How many steps forward? ")
 	forward(int(delay) / 1000.0, int(steps))
-	steps = raw_input("How many steps backwards? ")
+#	steps = raw_input("How many steps backwards? ")
 	backwards(int(delay) / 1000.0, int(steps))
  
-
+def main(delay,steps):
+	# Motor step and delay values
+	#perform motor_start
+	motor_start(delay,steps)
 
 if __name__ == '__main__':
-	##perform motor_start
-	motor_start()
+	delay = 1
+	steps = 250
+	main(delay,steps)
