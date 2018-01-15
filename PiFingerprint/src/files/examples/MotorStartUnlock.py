@@ -68,7 +68,7 @@ def motor_start(delay,step):
 #	steps = raw_input("How many steps forward? ")
 	forward(int(delay) / 1000.0, int(steps))
 #	steps = raw_input("How many steps backwards? ")
-	backwards(int(delay) / 1000.0, int(steps))
+#	backwards(int(delay) / 1000.0, int(steps))
  
 #def main(delay,steps):
 	# Motor step and delay values
