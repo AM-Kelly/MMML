@@ -39,28 +39,28 @@ var config = {
 		},
 		{
 			module: "calendar",
-			header: "US Holidays",
+			header: "UK Holidays",
 			position: "top_left",
 			config: {
 				calendars: [
 					{
 						symbol: "calendar-check-o ",
-						url: "webcal://www.calendarlabs.com/templates/ical/US-Holidays.ics"
+						url: "webcal://www.calendarlabs.com/templates/ical/UK-Holidays.ics"
 					}
 				]
 			}
 		},
-		{
-			module: "compliments",
-			position: "lower_third"
-		},
+		//{
+			//module: "compliments",
+			//position: "lower_third"
+		//},
 		{
 			module: "currentweather",
 			position: "top_right",
 			config: {
-				location: "New York",
-				locationID: "",  //ID from http://www.openweathermap.org/help/city_list.txt
-				appid: "YOUR_OPENWEATHER_API_KEY"
+				location: "Cheddar",
+				locationID: "2653281",  //ID from http://www.openweathermap.org/help/city_list.txt
+				appid: "51066ee34801b02dd190929a963f35d1"
 			}
 		},
 		{
@@ -68,9 +68,9 @@ var config = {
 			position: "top_right",
 			header: "Weather Forecast",
 			config: {
-				location: "New York",
-				locationID: "5128581",  //ID from http://www.openweathermap.org/help/city_list.txt
-				appid: "YOUR_OPENWEATHER_API_KEY"
+				location: "Cheddar",
+				locationID: "2653281",  //ID from http://www.openweathermap.org/help/city_list.txt
+				appid: "51066ee34801b02dd190929a963f35d1"
 			}
 		},
 		{
@@ -79,14 +79,48 @@ var config = {
 			config: {
 				feeds: [
 					{
-						title: "New York Times",
-						url: "http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml"
+						title: "BBC",
+						url: "http://feeds.bbci.co.uk/news/rss.xml"
 					}
 				],
 				showSourceTitle: true,
 				showPublishDate: true
 			}
 		},
+		{
+  module: 'MMM-MyCommute',
+  position: 'lower_third',
+  config: {
+    apikey: 'AIzaSyC_dkNUTgwmzPNUiiV13bc2qhvuFNW3tQA',
+    origin: '65 Front St W, Toronto, ON M5J 1E6',
+    startTime: '00:00',
+    endTime: '23:59',
+    hideDays: [0,6],
+    destinations: [
+      {
+        destination: '14 Duncan St Toronto, ON M5H 3G8',
+        label: 'Air Canada Centre',
+        mode: 'walking',
+        color: '#82E5AA'
+      },
+      {
+        destination: '317 Dundas St W, Toronto, ON M5T 1G4',
+        label: 'Art Gallery of Ontario',
+        mode: 'transit'
+      },
+      {
+        destination: '55 Mill St, Toronto, ON M5A 3C4',
+        label: 'Distillery District',
+        mode: 'bicycling'
+      },
+      {
+        destination: '6301 Silver Dart Dr, Mississauga, ON L5P 1B2',
+        label: 'Pearson Airport',
+        avoid: 'tolls'
+      }
+    ]
+  }
+}
 	]
 
 };
