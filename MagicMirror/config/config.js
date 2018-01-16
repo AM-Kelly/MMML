@@ -92,31 +92,35 @@ var config = {
   position: 'lower_third',
   config: {
     apikey: 'AIzaSyC_dkNUTgwmzPNUiiV13bc2qhvuFNW3tQA',
-    origin: '65 Front St W, Toronto, ON M5J 1E6',
+    origin: '3 Glebelands Close, Cheddar, BS27 3XP',
     startTime: '00:00',
     endTime: '23:59',
     hideDays: [0,6],
+    travelTimeFormat: 'h[h] m[m]',
+    //showSummary: true,
+    //colorCodeTravelTime: true,
     destinations: [
       {
-        destination: '14 Duncan St Toronto, ON M5H 3G8',
-        label: 'Air Canada Centre',
-        mode: 'walking',
+        destination: 'University Centre Somerset, Wellington Rd, Taunton, TA1 5AX',
+        label: 'Drive to University Centre Somerset',
         color: '#82E5AA'
       },
       {
-        destination: '317 Dundas St W, Toronto, ON M5T 1G4',
-        label: 'Art Gallery of Ontario',
-        mode: 'transit'
+        destination: 'Cheddar Library, Union Street, Cheddar',
+        label: 'Walk to Cheddar Library',
+        mode: 'walking',
+        color: '#E58282'
       },
       {
-        destination: '55 Mill St, Toronto, ON M5A 3C4',
-        label: 'Distillery District',
-        mode: 'bicycling'
+        destination: 'The Roman Baths, Stall St, Bath, BA1 1LZ',
+        label: 'Drive to Work',
+        color: '#8D82E5'
       },
       {
-        destination: '6301 Silver Dart Dr, Mississauga, ON L5P 1B2',
-        label: 'Pearson Airport',
-        avoid: 'tolls'
+        destination: 'The Railway Inn, Station Rd, Sandford, Winscombe, BS25 5RA',
+        label: 'Cycle Ride to Pub',
+        mode: 'bicycling',
+        color: '#E582D4'
       }
     ]
   }
