@@ -88,6 +88,19 @@ var config = {
 			}
 		},
 		{
+    "module": "MMM-awesome-alexa",
+    "position": "top_center",
+    "config": {
+        "wakeWord": "Alexa",
+        "clientId": "amzn1.application-oa2-client.a55ec5f131ce4b448c33ceeb0489bc99",
+        "clientSecret": "774616512f1f93f8568b47c0ab48299cf2f80ab89b5e93ff897ad5a76ffa3743",
+        "deviceId": "SMML001",
+        "refreshToken": "Atzr|IwEBILbzc17LllFnVwV4VB9WEGFV_gqerjkofNtLAlbkeY9YmqugqAlpTvsenGAYrvzqL9GyfBp-eVjcTMC8ovd4l1YD_g_jhDmBrCZrhi0gV83T6uVtts99x9lSSudwQmq80CAdcUHbzqownxOxuCIde-LLl9Q5-Vs4O4bdkJ9rwChsnLp6Ogc3HqoxhwsrntH63RX-rRNG2-uAJ2iomRk1UAUN83svB9Mew7Z8A5qdvg6OYoXLH0NmhGdF8Sy2ZTf3U8BAJBwsUClZGpAiBOLE5G5SrZmetA3FnozLYY2ZNnCGY3bldxpPBlxXdsBhqjXoT6WZ52fb5_s6Rk_jUod1_xd6rtwf3gYBey6jeYc9QiHPLU6HA_ics4QZcVi8h_BZ0yb11o9w-72rEUggO7nxsSoWdBeq3CTquqI9zleMM61L3JSPSt8lgBHTkdxZnFxC2abMRHa4vo3TP19ePlEZsi1IAKrhSzs_svex5Yrh0zzX5CTh0Gg1_L8CNKXpMfuu9J8",
+        "lite": false,
+        "isSpeechVisualizationEnabled": true
+    }
+},
+		{
   module: 'MMM-MyCommute',
   position: 'lower_third',
   config: {
@@ -125,6 +138,7 @@ var config = {
     ]
   }
 }
+
 	]
 
 };
