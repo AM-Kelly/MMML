@@ -1,4 +1,4 @@
-/* Magic Mirror Config Sample
+/* Magic Mirror Config
  *
  * By Michael Teeuw http://michaelteeuw.nl
  * MIT Licensed.
@@ -88,6 +88,44 @@ var config = {
 			}
 		},
 		{
+			module: 'MMM-MyCommute',
+			position: 'lower_third',
+			config: {
+						apikey: 'AIzaSyC_dkNUTgwmzPNUiiV13bc2qhvuFNW3tQA',
+						origin: '3 Glebelands Close, Cheddar, BS27 3XP',
+						startTime: '00:00',
+						endTime: '23:59',
+						hideDays: [0,6],
+						travelTimeFormat: 'h[h] m[m]',
+						//showSummary: true,
+						//colorCodeTravelTime: true,
+						destinations: [
+					{
+						destination: 'University Centre Somerset, Wellington Rd, Taunton, TA1 5AX',
+						label: 'Drive to University Centre Somerset',
+						color: '#82E5AA'
+					},
+					{
+						destination: 'Cheddar Library, Union Street, Cheddar',
+						label: 'Walk to Cheddar Library',
+						mode: 'walking',
+						color: '#E58282'
+					},
+					{
+						destination: 'The Roman Baths, Stall St, Bath, BA1 1LZ',
+						label: 'Drive to Work',
+						color: '#8D82E5'
+					},
+					{
+						destination: 'The Railway Inn, Station Rd, Sandford, Winscombe, BS25 5RA',
+						label: 'Cycle Ride to Pub',
+						mode: 'bicycling',
+						color: '#E582D4'
+					}
+					]
+				}
+		},
+		{
     "module": "MMM-awesome-alexa",
     "position": "top_center",
     "config": {
@@ -98,46 +136,8 @@ var config = {
         "refreshToken": "Atzr|IwEBILbzc17LllFnVwV4VB9WEGFV_gqerjkofNtLAlbkeY9YmqugqAlpTvsenGAYrvzqL9GyfBp-eVjcTMC8ovd4l1YD_g_jhDmBrCZrhi0gV83T6uVtts99x9lSSudwQmq80CAdcUHbzqownxOxuCIde-LLl9Q5-Vs4O4bdkJ9rwChsnLp6Ogc3HqoxhwsrntH63RX-rRNG2-uAJ2iomRk1UAUN83svB9Mew7Z8A5qdvg6OYoXLH0NmhGdF8Sy2ZTf3U8BAJBwsUClZGpAiBOLE5G5SrZmetA3FnozLYY2ZNnCGY3bldxpPBlxXdsBhqjXoT6WZ52fb5_s6Rk_jUod1_xd6rtwf3gYBey6jeYc9QiHPLU6HA_ics4QZcVi8h_BZ0yb11o9w-72rEUggO7nxsSoWdBeq3CTquqI9zleMM61L3JSPSt8lgBHTkdxZnFxC2abMRHa4vo3TP19ePlEZsi1IAKrhSzs_svex5Yrh0zzX5CTh0Gg1_L8CNKXpMfuu9J8",
         "lite": false,
         "isSpeechVisualizationEnabled": true
-    }
-},
-		{
-  module: 'MMM-MyCommute',
-  position: 'lower_third',
-  config: {
-    apikey: 'AIzaSyC_dkNUTgwmzPNUiiV13bc2qhvuFNW3tQA',
-    origin: '3 Glebelands Close, Cheddar, BS27 3XP',
-    startTime: '00:00',
-    endTime: '23:59',
-    hideDays: [0,6],
-    travelTimeFormat: 'h[h] m[m]',
-    //showSummary: true,
-    //colorCodeTravelTime: true,
-    destinations: [
-      {
-        destination: 'University Centre Somerset, Wellington Rd, Taunton, TA1 5AX',
-        label: 'Drive to University Centre Somerset',
-        color: '#82E5AA'
-      },
-      {
-        destination: 'Cheddar Library, Union Street, Cheddar',
-        label: 'Walk to Cheddar Library',
-        mode: 'walking',
-        color: '#E58282'
-      },
-      {
-        destination: 'The Roman Baths, Stall St, Bath, BA1 1LZ',
-        label: 'Drive to Work',
-        color: '#8D82E5'
-      },
-      {
-        destination: 'The Railway Inn, Station Rd, Sandford, Winscombe, BS25 5RA',
-        label: 'Cycle Ride to Pub',
-        mode: 'bicycling',
-        color: '#E582D4'
-      }
-    ]
-  }
-}
+			}
+		},
 
 	]
 
