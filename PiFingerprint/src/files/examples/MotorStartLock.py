@@ -8,7 +8,7 @@ def motor_start(delay,step):
  
 	GPIO.setmode(GPIO.BCM)
 	GPIO.setwarnings(False)
-	#in order of firing magnets
+	#in order of pin placement on RPi GP/IO
 	coil_pin_4 = 26 # Yellow
 	coil_pin_3 = 19 # Orange
 	coil_pin_2 = 13 # Red
