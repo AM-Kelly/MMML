@@ -78,6 +78,3 @@ Temporary Items
 *.orig
 *.rej
 *.bak
-
-#Ignore the Config file
-!/config/config.js
