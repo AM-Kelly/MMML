@@ -1,0 +1,9 @@
+#Ignore config file
+MagicMirror/config/config.js
+
+#Ignore txt files in this main directory
+AVS\ Creation\ URL
+Fixes\ URLs
+Issues\ URLs
+
+
