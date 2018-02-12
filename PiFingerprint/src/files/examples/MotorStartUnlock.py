@@ -1,5 +1,5 @@
 delay = 1
-steps = 250
+steps = 30
 def motor_start(delay,step):
 	import RPi.GPIO as GPIO
 	import time
